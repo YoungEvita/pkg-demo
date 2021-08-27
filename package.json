@@ -1,0 +1,31 @@
+{
+  "name": "pkg-demo",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "pkg": "pkg -t node10.15.3-win-x64 . -o app-x64 && pkg -t node10.15.3-win-x86 . -o app-x86"
+  },
+  "dependencies": {
+    "connect-history-api-fallback": "^1.6.0",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "express-static-gzip": "^2.1.1",
+    "http-errors": "~1.6.3",
+    "mockjs": "^1.1.0",
+    "morgan": "~1.9.1",
+    "opn": "^6.0.0"
+  },
+  "bin": "./bin/www",
+  "pkg": {
+    "script": [
+      "app.js"
+    ],
+    "assets": [
+      "public",
+      "services/**"
+    ]
+  }
+}
